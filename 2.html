@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Baniyas Restaurant
+</title>
+<style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #fafafa; }
+
+    /* Header */
+   
+
+    nav {
+        background: #333;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    nav a:hover {
+        color: #ffd700;
+    }
+
+    /* Sections */
+    section { padding: 50px; max-width: 1000px; margin: auto; }
+    h2 { text-align: center; margin-bottom: 20px; }
+
+    /* Menu */
+    .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    .dish {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+    }
+    .dish h3 { margin: 0; }
+    .dish p { color: #555; }
+
+    /* Reservation */
+    form {
+        background: #fff;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+        max-width: 500px;
+        margin: auto;
+    }
+
+    form input, form select, form button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 10px;
+        border-radius: 5px;
+        border: 1px solid #aaa;
+    }
+    form button {
+        background: #333;
+        color: white;
+        cursor: pointer;
+    }
+    form button:hover {
+        background: #555;
+    }
+
+    /* Reviews */
+    .review {
+        background: white;
+        padding: 20px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        box-shadow: 0px 2px 6px rgba(0,0,0,0.05);
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    The baniyas Restaurant
+</header>
+
+<nav>
+    <a href="#menu">Menu</a>
+    <a href="#reservation">Reservations</a>
+    <a href="#reviews">Reviews</a>
+</nav>
+
+<!-- Menu Section -->
+<section id="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-grid">
+        <div class="dish">
+            <h3>Grilled Chicken Alfredo</h3>
+            <p>Creamy pasta with grilled chicken.</p>
+            <strong>₹450</strong>
+        </div>
+        <div class="dish">
+            <h3>Margherita Pizza</h3>
+            <p>Classic pizza with tomatoes, basil, and mozzarella.</p>
+            <strong>₹350</strong>
+        </div>
+        <div class="dish">
+            <h3>Veggie Burger</h3>
+            <p>Delicious patty with fresh lettuce and cheese.</p>
+            <strong>₹220</strong>
+        </div>
+        <div class="dish">
+            <h3>Chocolate Lava Cake</h3>
+            <p>Warm gooey chocolate with ice cream.</p>
+            <strong>₹180</strong>
+        </div>
+    </div>
+</section>
+
+<!-- Reservation Section -->
+<section id="reservation">
+    <h2>Online Reservation</h2>
+    <form id="reservationForm">
+        <label>Name:</label>
+        <input type="text" required>
+
+        <label>Email:</label>
+        <input type="email" required>
+
+        <label>Date:</label>
+        <input type="date" required>
+
+        <label>Time:</label>
+        <input type="time" required>
+
+        <label>Number of Guests:</label>
+        <select required>
+            <option value="">Select</option>
+            <option>1</option><option>2</option><option>3</option>
+            <option>4</option><option>5</option><option>6+</option>
+        </select>
+
+        <button type="submit">Reserve Now</button>
+    </form>
+
+    <p id="confirmation" style="text-align:center; margin-top:20px; color:green; font-size:20px;"></p>
+</section>
+
+<!-- Reviews Section -->
+<section id="reviews">
+    <h2>Customer Reviews</h2>
+
+    <div class="review">
+        ⭐⭐⭐⭐⭐  
+        <p><strong>Riya Sharma:</strong> Amazing food and great ambiance! Loved the pasta.</p>
+    </div>
+
+    <div class="review">
+        ⭐⭐⭐⭐☆  
+        <p><strong>Arjun Verma:</strong> Pizza was fantastic. Service could be faster.</p>
+    </div>
+
+    <div class="review">
+        ⭐⭐⭐⭐⭐  
+        <p><strong>Sneha Patel:</strong> Best dessert in town! Will visit again.</p>
+    </div>
+
+</section>
+
+<script>
+    document.getElementById("reservationForm").addEventListener("submit", function(event){
+        event.preventDefault();
+        document.getElementById("confirmation").innerText =
+            "🎉 Your table has been reserved! We look forward to serving you.";
+        this.reset();
+    });
+</script>
+
+</body>
+</html>
